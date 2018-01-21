@@ -7,7 +7,7 @@
             <span>{{ first_label }}</span>
           </li>
         {% else %}
-          <li>
+          <li class="page-item">
             <a title="First Page" href="{{ first_page_url|default:"#"|escape }}">{{first_label}}</a>
           </li>
         {% endif %}
@@ -18,14 +18,14 @@
             <span title="Previous Page">{{ previous_label }}</span>
           </li>
         {% else %}
-          <li>
+          <li class="page-item">
             <a title="Previous Page" href="{{ previous_page_url|default:"#"|escape }}">{{ previous_label }}</a>
           </li>
         {% endif %}
     {% endif %}
     {% for pagenum, index_range, url in page_urls %}
         {% if page.number == pagenum %}
-            <li class="active">
+            <li class="page-item active">
                 <span title="Current Page">{% if show_index_range %} {{ index_range }} {% else %} {{ pagenum }} {%endif %}</span>
             </li>
         {% else %}
